@@ -4,7 +4,7 @@
 |:---|:---|
 |로그인 로그아웃| 사용자에 대한 로그인 로그아웃 기능이 제공되어야 한다.|
 
-## 2. User Story
+## 2. User Story 
 
 | 구분 | User Strory | Feature List | Feature Spec |
 |:---|:---|:---|:---|
