@@ -40,6 +40,7 @@
 * API : `{국가 정보}/logout`
 
 ### 실패 시 응답 설계
+
 | 에러 상황 | response message |
 |---|---|
 |시리얼 길이 에러|	Invalid serial number - length|
