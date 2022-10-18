@@ -3,9 +3,11 @@ import * as winston from 'winston';
 import 'winston-daily-rotate-file';
 import { colors } from '../colors';
 
+// 실제 create logger를 행하게 되는 class
 class LogUtil {
   private logger: winston.Logger;
   constructor() {
+    // logger의 config 정의
     const configJson = {
       filename: '%DATE%_RMS_SERVER.log',
       datePattern: 'YYYY/MM/DD/YYYYMMDD',
@@ -15,11 +17,12 @@ class LogUtil {
     this.logger = createLogger(configJson);
   }
 
+  // warning logging
   warning(message: string, option: { [key: string]: any } = {}) {
     const stack = this.getStack();
     this.logger.warning({ message, stack, option });
   }
-
+  // error logging => err는 저마다 stack값을 가지고 있음. 해당 stack값을 err 원인 파악을 위해 parameter 받아온다.
   error(message: string, errStack: string) {
     const stack = this.getStack();
     const err = {
@@ -30,21 +33,25 @@ class LogUtil {
     this.logger.error(err);
   }
 
+  // info logging 
   info(message: string, option: { [key: string]: any } = {}) {
     const stack = this.getStack();
     this.logger.info({ message, stack, option });
   }
 
+  // debug logging
   debug(message: string, option: { [key: string]: any } = {}) {
     const stack = this.getStack();
     this.logger.debug({ message, stack, option });
   }
 
+  // loging => log level에 따라 다르게 logging 해준다.
   log(level: string, msg: string, option: { [key: string]: any } = {}) {
     const stack = this.getStack();
     this.logger.log({ level: level, message: msg, stack, option });
   }
-
+  
+  // 해당 명령이 일어난 위치 stack을 추출하기 위한 함수
   getStack() {
     const stackList: string[] = new Error().stack.split('\n');
     const funcName = getFuncNameInLine(stackList[3]);
@@ -77,8 +84,10 @@ function getFuncNameInLine(line: string) {
   return `${line.trim().split(' ')[1]} - ${getFileNameInline(line)}`;
 }
 
+// logger export
 export const Logger = new LogUtil();
 
+// winston logger를 이용한 loging module 실제 구현 부
 function createLogger(logOption) {
   return winston.createLogger({
     levels: winston.config.syslog.levels,
