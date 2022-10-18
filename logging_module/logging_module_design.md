@@ -62,6 +62,7 @@ try {
 * Logger.log는 parameter 값으로 level 옵션을 추가해준다.
 
 * level 옵션의 종류
+
 ![image](https://user-images.githubusercontent.com/88424067/196343768-acf3daea-7d64-4ab3-b18e-fe93212c8a37.png)
 
 ### 결과 화면
