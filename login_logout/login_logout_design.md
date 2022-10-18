@@ -72,4 +72,4 @@
 |데이터 오류|	"Invalid data"|
 |DB 에러|	"DB error"|
 |업데이트할 패턴 없음|	"You do not need to update the pattern"|
-|성공	"SUCCESS"|
+|성공|	"SUCCESS"|
