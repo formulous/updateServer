@@ -75,4 +75,4 @@ h3. 결과 화면
 
 * 로그 출력
 
-![image](https://user-images.githubusercontent.com/88424067/196343945-0274e6c1-3957-4c6f-8de5-0ee0542027a0.png)
+![image](https://user-images.githubusercontent.com/88424067/196343945-0274e6c1-3957-4c6f-8de5-0ee0542027a0.png) 
