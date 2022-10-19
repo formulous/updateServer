@@ -34,6 +34,8 @@
 | `SW_LICENSE` | string | 예시) af7a5ba37c74896c |
 | `_token`  | string | 자체적으로 발급해주는 토큰, 웹 브라우저 상의 user 관리용 |
 
+* reponse
+
 ### 로그아웃
 
 * method : GET
@@ -48,29 +50,11 @@
 |시리얼/라이선스 등록 안됨|	"The serial number or license is not registered"|
 |시리얼 만료일 지남|	"The expiration date for this serial is until ~"|
 |시리얼에 다운로드 권한 없음|	"The serial do not have permission to download"|
-|다운로드를 지원하지 않는 제품의 시리얼|	"Unsupported product type"|
 |시리얼 입력|	"Please enter your serial number."|
 |라이선스 길이 에러|	"Invalid license number - length"|
 |라이선스 빈 값|	"Invalid license number - empty"|
 |라이선스 입력|	"Please enter your license number."|
-|block 값 없음	|"Invalid data - Block empty"|
-|block 값 에러|	"Invalid data - Block value"|
-|block 값 에러	|"Invalid data - Block length"|
-|encrypt 값 없음|"	Invalid data - Encrypt empty"|
-|encrypt 값 에러|	"Invalid data - Encrypt value"|
-|encrypt 값 에러|	"Invalid data - Encrypt length"|
-|date 값 없음|	"Invalid date - empty"|
-|date 값 에러|	"Invalid date - value"|
-|date 값 에러|"Invalid date - length"|
-|time 값 에러|	"Invalid date - time"|
-|path 값 에러|	"Invalid data - file path"|
-|요청 url 과 다운받을 파일의 type 불일치	|"Unsupported download type"|
-|파일 찾을수 없음|	"not found file"|
-|파일명 에러|	"Invalid filename"|
-|패턴 파일 정상 다운로드|	"pattern download ok"|
-|요청 url 과 시리얼의 언어 불일치|	"This serial does not support "|
 |예상 범위 벗어남|	"Out of range"|
 |데이터 오류|	"Invalid data"|
 |DB 에러|	"DB error"|
-|업데이트할 패턴 없음|	"You do not need to update the pattern"|
 |성공|	"SUCCESS"|
