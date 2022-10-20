@@ -19,10 +19,13 @@
 3. 로그아웃 시 토큰 처리 방법
 - Client 단에서 access token을 삭제
 4. 토큰 만료 시간, 토큰 갱신 방법
-
+- accesstoken : 만료시간 10m
 5. 토큰에 담을 정보 설계
-
+- header:
+- payload:
+- signature:
 6. 일반적인 api 요청 과정
+- 로그인 후 발급받은 access token으로 auth 인증
 
 10.21 까지 필요 사항
 * 로그인 인증 과정 설계
