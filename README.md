@@ -19,7 +19,9 @@
 1. 로그 Rotate, (size, 값 선정 기준??) 작성
 2. API 요청 시 응답 값 예시 작성
 3. API 파일 구분 혹은, serialNum 별로 로그 파일 구분해서 저장 가능한지 여부
+- log level에 따른 구분 저장은 가능한 것으로 확인
 4. log file 열었을 때 cat으로 연것처럼 깔끔하게 나올 수 있는지 (후속 조치사항)
+- log에 colorize 옵션을 제거해 파일에 따로 컬러 설정이 출력되지 않도록 함
 
 ## login/logout 기능 설계 (2022-10-21 까지)
 
@@ -33,8 +35,30 @@
 - accesstoken : 만료시간 10m
 5. 토큰에 담을 정보 설계
 - header:
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
 - payload:
+```json
+{
+  "ver": "IPSEF",
+  "limit_date": "20191231" 
+  ...
+}
+```
 - signature:
+```
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+
+your-256-bit-secret
+
+) secret base64 encoded
+```
 6. 일반적인 api 요청 과정
 - 로그인 후 발급받은 access token으로 auth 인증
 
