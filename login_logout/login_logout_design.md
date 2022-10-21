@@ -29,11 +29,11 @@
 ### 로그인 설계
 
 * 로그인 인증 과정 (JWT)
-* 
+
 ![image](https://user-images.githubusercontent.com/88424067/197101416-f18c8b4e-a129-4761-b425-e1b52a2b9144.png)
 
 * 로그인 후 일반적인 API 요청 과정
-* 
+
 ![image](https://user-images.githubusercontent.com/88424067/197101448-5a6b2848-ce45-464c-9797-b72c06b3a2f5.png)
 
 ```
