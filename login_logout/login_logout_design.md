@@ -53,10 +53,8 @@
 * 로그인 api 요청 예시
 
 ``` json
-/*
-method: POST
-url : http://10.0.13.224:4105/kr/login
-*/
+// method: POST
+// url : http://10.0.13.224:4105/kr/login
 
 data : 
 {
