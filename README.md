@@ -12,4 +12,4 @@
 
 ## 2022-10-26
 * 업데이트 서버 사양 변경을 지양하기 위해 session login 방식으로 구현 결정
-* Update Server 특성상 과부화의 위험이 없기 때문에 memorystore를 사용하여 
+* Update Server 특성상 과부화의 위험이 없기 때문에 memorystore를 사용하여 보안 강화
