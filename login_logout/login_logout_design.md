@@ -65,8 +65,6 @@ url : http://10.0.13.224:4105/kr/login
 * Body
 
 ```json
-<pre>
-data : 
 {
     "ser": "SKRO5CWIT202036",
     "lic": "e8c4ffbea9e72579"
@@ -76,7 +74,6 @@ data :
 * Response
 
 ```json
-response :
 {
     "status": 201,
     "message": "Login Success"
@@ -156,16 +153,13 @@ url : http://10.0.13.224:4105/kr/logout
 * 로그인 시 오류와 정상 처리에 대한 응답 포맷 일관되게
 
 ```json
-// 오류 발생시
 {
     "statusCode": 401,
     "message": "This serial is expired since [만료 날짜]",
     "error": "Unauthorized"
 }
-// 정상 처리시
 {
     "status": 202,
-    "sessionId": "VzScJwHuVpPPYeH8F_MuBM2JaIYTh-vB",
     "message": "Login Success"
 }
 ```
