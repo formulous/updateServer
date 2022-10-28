@@ -27,11 +27,11 @@
 ### 로그인 설계
 
 * 로그인 인증 과정 
-* 
+
 ![image](https://user-images.githubusercontent.com/88424067/198510585-45182c13-e561-4d0e-b1d3-1c5dd02cc7e6.png)
 
 * 로그인 후 일반적인 API 요청 과정
-* 
+
 ![image](https://user-images.githubusercontent.com/88424067/198510621-45bc38de-8f87-45f0-8bff-74c63179120b.png)
 
   1. serialNum, licenseNum을 입력하여 로그인 요청
