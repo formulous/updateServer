@@ -27,9 +27,11 @@
 ### 로그인 설계
 
 * 로그인 인증 과정 
+* 
 ![image](https://user-images.githubusercontent.com/88424067/198510585-45182c13-e561-4d0e-b1d3-1c5dd02cc7e6.png)
 
 * 로그인 후 일반적인 API 요청 과정
+* 
 ![image](https://user-images.githubusercontent.com/88424067/198510621-45bc38de-8f87-45f0-8bff-74c63179120b.png)
 
   1. serialNum, licenseNum을 입력하여 로그인 요청
@@ -51,13 +53,17 @@
 * 국가: kr / jp / en ( default: kr )
 
 * 로그인 api 요청 예시
+
 * method and url
+
 ```
 method: POST
 
 url : http://10.0.13.224:4105/kr/login
 ```
+
 * Body
+
 ```json
 <pre>
 data : 
@@ -66,7 +72,9 @@ data :
     "lic": "e8c4ffbea9e72579"
 }
 ```
-** Response
+
+* Response
+
 ```json
 response :
 {
@@ -80,6 +88,7 @@ response :
 ### Error Handling
 
 1. 입력한 정보가 db에 존재하지 않을 경우 (404: Not Found)
+
 ```json
 {
     "statusCode": 404,
@@ -89,6 +98,7 @@ response :
 ```
 
 2. 국가 정보가 맞지 않은 경우 (400: Bad Request)
+
 ```json
 {
     "statusCode": 400,
@@ -98,6 +108,7 @@ response :
 ```
 
 3. 입력한 정보가 유효하지 않을 경우 (400: Bad Request)
+
 ```json
 {
     "statusCode": 400,
@@ -107,6 +118,7 @@ response :
 ```
 
 4. 입력한 정보의 정책이 만료되었을 경우 (401: Unauthorized)
+
 ```json
 {
     "statusCode": 401,
@@ -120,6 +132,7 @@ response :
 * 로그아웃 시 Memorystore에 저장된 sessionID를 삭제 처리 해준다.
 
 * method and url
+
 ```
 method: GET
 
@@ -141,6 +154,7 @@ url : http://10.0.13.224:4105/kr/logout
 ### 2022-10-28 리뷰 후 개선 필요 사항
 
 * 로그인 시 오류와 정상 처리에 대한 응답 포맷 일관되게
+
 ```json
 // 오류 발생시
 {
@@ -156,7 +170,9 @@ url : http://10.0.13.224:4105/kr/logout
 }
 ```
 * 서비스 단에 서비스 로직만 존재하도록 유효성 검증 파이프로 모으기
+
 * login api 적용 부
+
 ```typescript
  @Post('/login')
   doLogin(
@@ -170,6 +186,7 @@ url : http://10.0.13.224:4105/kr/logout
 
 ```
 * LoginValidationPipe 구현 부
+
 ```typescript
 import {
   ArgumentMetadata,
