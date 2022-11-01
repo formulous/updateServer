@@ -144,3 +144,20 @@
   ```
 
 * 서버단에서의 쿠키 관리 구현하기
+
+  ```typescript
+  app.use(
+      session({
+        secret: 'UPDATE_SERVER_SECRET',
+        resave: false,
+        saveUninitialized: false,
+        // store: new FileStore(),
+        store: memoryStore,
+        cookie: {
+          httpOnly: false,
+        },
+      })
+    );
+  ```
+  * app.use(session) 에서 cookie 옵션을 주면 response 헤더에 자동으로 set-cookie가 설정되어 브라우저에 cookie를 저장 해준다.
+  
