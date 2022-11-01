@@ -160,4 +160,5 @@
     );
   ```
   * app.use(session) 에서 cookie 옵션을 주면 response 헤더에 자동으로 set-cookie가 설정되어 브라우저에 cookie를 저장 해준다.
+  * cookie 삭제는 client에서 cookie의 expire date를 변경하는 방식으로 구현했다.
   
