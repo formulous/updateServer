@@ -43,5 +43,5 @@ ABSTRACT_ATTACKER|varchar(15)|NO||255.255.255.255||
 ABSTRACT_VICTIM|varchar(15)|NO||255.255.255.255||
 ABSTRACT_ATTACKER_V6|varchar(15)|YES||128||
 ABSTRACT_VICTIM_V6|varchar(15)|YES||128||
-OFFSET|int(5)|unsigned|NO||1548||
-O_FLAG|int(5)|unsigned|NO||2||
+OFFSET|int(5) unsigned|NO||1548||
+O_FLAG|int(5) unsigned|NO||2||
