@@ -13,7 +13,7 @@
 ## 3. Database 설계
 
 * example table: EXT_SNIPER_PATTERN
-  * 나머지 Table은 #109889 일감 확인
+  * 나머지 Table은 `#109889` 일감 확인
 
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |-----|-----|------|-----|-----|-----|
