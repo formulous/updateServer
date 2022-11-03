@@ -55,6 +55,7 @@ O_FLAG|int(5) unsigned|NO||2||
 * API: /[국가정보]/get_list
  * 국가 : kr/jp/en
 * parameter
+
  |*parameter*|*type*|*example*|*description*|
  |-----|-----|-----|-----|
  |sourcedate|string|20220930000000|검색기간 - 검색 시작 날짜|
