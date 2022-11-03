@@ -1,16 +1,17 @@
-## 요구사항
+## 1. 요구사항
 
 * 검색 조건에 따라 패턴을 조회할 수 있어야 한다
 * 검색 조건에 맞게 패턴 테이블이 달라져야 한다
 * 국가 코드에 맞게 도움말 테이블이 달라져야 한다
 * 검색된 패턴으로 패턴 파일이 생성되어야 한다
 
-## User Story
+## 2. User Story
 |*User Story*|*Feature List*|*Feature Spec*|
 |-----|-----|-----|
 |사용자는 그리드에서 보지 않을 컬럼을 설정하기 위해 마우스 우클릭을 한다.|-컨텍스트 메뉴|1. 활성화<br>-메뉴가 항상 활성화 된 상태|
 
-## Database 설계
+## 3. Database 설계
+
 * example table: EXT_SNIPER_PATTERN
   * 나머지 Table은 #109889 일감 확인
 
@@ -49,13 +50,13 @@ ABSTRACT_VICTIM_V6|varchar(15)|YES||128||
 OFFSET|int(5) unsigned|NO||1548||
 O_FLAG|int(5) unsigned|NO||2||
 
-## API 설계
+## 4. API 설계
 
 * method: POST
 * API: /[국가정보]/get_list
  * 국가 : kr/jp/en
 
-### parameter
+### 4-1. parameter
 
  |*parameter*|*type*|*example*|*description*|
  |-----|-----|-----|-----|
@@ -79,7 +80,7 @@ O_FLAG|int(5) unsigned|NO||2||
  * 미존재 항목(4) : START_PATTERN_NUM, END_PATTERN_NUM, release, product
  * 고정값 항목(3) : pbcheck, webcheck, regcheck => false
 
-### API 요청 예시
+### 4-2. API 요청 예시
 ```javascript
 {
   sourcedate: 20220930000000
@@ -98,7 +99,7 @@ O_FLAG|int(5) unsigned|NO||2||
   END_PATTERN_NUM: 
 }
 ```
-### Response 예시
+### 4-3. Response 예시
 * Status Code: 200 OK
 * Response
 ```json
