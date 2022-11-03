@@ -11,6 +11,8 @@
 |사용자는 그리드에서 보지 않을 컬럼을 설정하기 위해 마우스 우클릭을 한다.|-컨텍스트 메뉴|1. 활성화<br>-메뉴가 항상 활성화 된 상태|
 
 # Database 설계
+* example table: EXT_SNIPER_PATTERN
+  * 나머지 Table은 #109889 일감 확인
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |-----|-----|------|-----|-----|-----|
 |T_CODE|int(5)|NO|PRI|0||
