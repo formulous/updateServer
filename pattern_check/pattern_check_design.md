@@ -80,7 +80,7 @@ O_FLAG|int(5) unsigned|NO||2||
  * 고정값 항목(3) : pbcheck, webcheck, regcheck => false
 
 ### API 요청 예시
-```json
+```javascript
 {
   sourcedate: 20220930000000
   destinationdate: 20220930235959
@@ -115,7 +115,7 @@ O_FLAG|int(5) unsigned|NO||2||
    }
 }
 
-1. _patternBlockList 예시 2개: 
+예시1. _patternBlockList 예시 2개: 
       {
          "cate":1100,
          "code":7095,
@@ -129,7 +129,7 @@ O_FLAG|int(5) unsigned|NO||2||
          "updatedate":"20221007094130" 
       },
 
-2. _patternWebCgiList 예시 2개:
+예시2. _patternWebCgiList 예시 2개:
       {
          "cate":1300,
          "code":6232,
@@ -143,7 +143,7 @@ O_FLAG|int(5) unsigned|NO||2||
          "updatedate":"20221007082906" 
       },
 
-3. _snortList 예시 2개
+예시3. _snortList 예시 2개
       {
          "cate":2402,
          "code":11353,
