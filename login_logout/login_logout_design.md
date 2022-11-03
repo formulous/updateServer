@@ -133,19 +133,17 @@ url : http://10.0.13.224:4105/kr/login
 ```
 method: GET
 
-url : http://10.0.13.224:4105/kr/logout
+url : http://10.0.13.224:4105/[국가정보]/logout
 ```
 
 ### 세션 유효기간 설정
 
-<pre>
-세션 유효기간은 따로 설정해두지 않고, 로그아웃 하기 전까지 유효하도록 설정 (기존의 업데이트 서버 사양을 따라 감)
-</pre>
+  세션 유효기간은 따로 설정해두지 않고, 로그아웃 하기 전까지 유효하도록 설정 (기존의 업데이트 서버 사양을 따라 감)
 
 ### 사용 모듈
 
-  1. express
-  2. moment // ser 만료 확인을 위한 날짜 비교
-  3. express-http-context
+    1. express
+    2. moment // ser 만료 확인을 위한 날짜 비교
+    3. express-http-context
 
 
