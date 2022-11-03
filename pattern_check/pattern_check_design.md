@@ -54,7 +54,8 @@ O_FLAG|int(5) unsigned|NO||2||
 * method: POST
 * API: /[국가정보]/get_list
  * 국가 : kr/jp/en
-* parameter
+
+### parameter
 
  |*parameter*|*type*|*example*|*description*|
  |-----|-----|-----|-----|
@@ -66,10 +67,93 @@ O_FLAG|int(5) unsigned|NO||2||
  |ENCRYPT|int|1|비암호화(0) / 암호화(1)|
  |BLOCK|int|0|차단 - 비적용(0) / 적용(1)|
  |product|string|one|제품코드 (one, lus, ips)|
- |GUI 외에 센서 자동 다운로드시, tmsp, ngfw, aptx 등도 존재함.<br/>(※ jp의 경우 미존재)|
- |pbcheck|int|1|카테고리 - PatternBlock 체크(1) / 미체크 (0) (※ jp의 경우 false 고정)|
- |webcheck|int|1|카테고리 - WebCGI 체크(1) / 미체크 (0) (※ jp의 경우 false 고정)|
- |regcheck|int|1|카테고리 - RegEx 체크(1) / 미체크 (0) (※ jp의 경우 false 고정)|
- |release|int|1|패턴 - 비공개(0) / 공개(1) (※ jp의 경우 미존재)|
- |START_PATTERN_NUM|string|4000|코드범위 - 시작 번호 (※ jp의 경우 미존재)|
- |END_PATTERN_NUM|string|5000|코드범위 - 마지막 번호 (※ jp의 경우 미존재)|
+ |GUI 외에 센서 자동 다운로드시, tmsp, ngfw, aptx 등도 존재함.<br/>*(※ jp의 경우 미존재)*|
+ |pbcheck|int|1|카테고리 - PatternBlock 체크(1) / 미체크 (0) *(※ jp의 경우 false 고정)*|
+ |webcheck|int|1|카테고리 - WebCGI 체크(1) / 미체크 (0) *(※ jp의 경우 false 고정)*|
+ |regcheck|int|1|카테고리 - RegEx 체크(1) / 미체크 (0) *(※ jp의 경우 false 고정)*|
+ |release|int|1|패턴 - 비공개(0) / 공개(1) *(※ jp의 경우 미존재)*|
+ |START_PATTERN_NUM|string|4000|코드범위 - 시작 번호 *(※ jp의 경우 미존재)*|
+ |END_PATTERN_NUM|string|5000|코드범위 - 마지막 번호 *(※ jp의 경우 미존재)*|
+
+* jp의 경우 없거나, 고정인 항목이 있다.
+ * 미존재 항목(4) : START_PATTERN_NUM, END_PATTERN_NUM, release, product
+ * 고정값 항목(3) : pbcheck, webcheck, regcheck => false
+
+### API 요청 예시
+```json
+{
+  sourcedate: 20220930000000
+  destinationdate: 20220930235959
+  SW_SERIAL: SKRO1CWIT206221
+  SW_LICENSE: af7a5ba37c74896c
+  product: one
+  ndelete: 0
+  ENCRYPT: 1
+  BLOCK: 0
+  pbcheck: 1
+  webcheck: 1
+  regcheck: 1
+  release: 1
+  START_PATTERN_NUM: 
+  END_PATTERN_NUM: 
+}
+```
+### Response 예시
+* Status Code: 200 OK
+* Response
+```json
+{
+   "serial":"SKRLELWIS232093",
+   "_patternBlockList":[아래 예시1 참고],
+   "_patternWebCgiList":[아래 예시2 참고],
+   "_snortList":[아래 예시3 참고],
+   "patternFilePath":"<a href=\/kr\/one\/pattern_download?file_path=one_pattern\/SKRLELWIS232093\/20221012100941.patternc ><img src='\/img\/download_en_n.png' onmouseover=\"this.src='\/img\/download_en_s.png'\" onmouseout=\"this.src='\/img\/download_en_n.png'\" style='cursor:pointer;' alt='download'>",
+   "patternCount":{
+      "patternblock":30,
+      "webCGI":10,
+      "snort":152
+   }
+}
+
+1. _patternBlockList 예시 2개: 
+      {
+         "cate":1100,
+         "code":7095,
+         "name":"LibreHealth acl_admin.php action XSS",
+         "updatedate":"20221012100717" 
+      },
+      {
+         "cate":1100,
+         "code":7094,
+         "name":"Win32\/Ransomware.SamSam.195596",
+         "updatedate":"20221007094130" 
+      },
+
+2. _patternWebCgiList 예시 2개:
+      {
+         "cate":1300,
+         "code":6232,
+         "name":"School Dormitory Management System admin s XSS",
+         "updatedate":"20221007094256" 
+      },
+      {
+         "cate":1300,
+         "code":6231,
+         "name":"IIPImage iipsrv.fcgi iiif Memory Corruption.A",
+         "updatedate":"20221007082906" 
+      },
+
+3. _snortList 예시 2개
+      {
+         "cate":2402,
+         "code":11353,
+         "name":"PrestaShop AP PageBuilder apajax.php SQL Injection",
+         "updatedate":"20221012100941" 
+      },
+      {
+         "cate":2402,
+         "code":11352,
+         "name":"WordPress Plugin RSVPMaker rsvp_id SQL Injection",
+         "updatedate":"20221012095028" 
+      },
+```
