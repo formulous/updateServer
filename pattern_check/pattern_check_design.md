@@ -164,5 +164,5 @@ O_FLAG|int(5) unsigned|NO||2||
 * jp GUI 구성
   ![image](https://user-images.githubusercontent.com/88424067/199653834-cff2a0bb-0928-4fc7-a4f9-1cd42e948743.png)
  * jp의 경우 없거나, 고정인 항목이 있다.
-  * 미존재 항목(4) : START_PATTERN_NUM, END_PATTERN_NUM, release, product
-  * 고정값 항목(3) : pbcheck, webcheck, regcheck => false
+   * 미존재 항목(4) : START_PATTERN_NUM, END_PATTERN_NUM, release, product
+   * 고정값 항목(3) : pbcheck, webcheck, regcheck => false
