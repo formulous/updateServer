@@ -52,9 +52,9 @@ O_FLAG|int(5) unsigned|NO||2||
 
 ## 4. API 설계
 
-* method: POST
-* API: /[국가정보]/get_list
- * 국가 : kr/jp/en
+* `method: POST`
+* `API: /[국가정보]/get_list`
+ * `국가 : kr/jp/en`
 
 ### 4-1. parameter
 
