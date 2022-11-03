@@ -13,6 +13,7 @@
 # Database 설계
 * example table: EXT_SNIPER_PATTERN
   * 나머지 Table은 #109889 일감 확인
+
 |*Field*|*Type*|*Null*|*Key*|*Default*|*Extra*|
 |-----|-----|------|-----|-----|-----|
 |T_CODE|int(5)|NO|PRI|0||
