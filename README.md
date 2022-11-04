@@ -133,14 +133,37 @@
   ```
   
 * 로그인 국가 별 API 구분하기
-
   * 입력 받은 url에서 lang 파라미터를 가져와 검사한다.
+  * param을 pipe단에서 검사할 방법이 없어서 국가 검증은 서비스단에서 진행
+  * param을 '/:lang?/login'을 통해 선택적으로 받고 국가정보가 존재하지 않을 시에는 default값인 kr로 지정
 
   ```typescript
-  if (lang.toUpperCase() !== ser.slice(1, 3)) {
-          message = `Serial number is not supported in ${lang.toUpperCase()}.`;
-          throw new BadRequestException();
-        }
+   // 국가 정보 일치 검사
+  async languageCheck(ser: string, lang: string) {
+    let message = '';
+    try {
+      // 국가 정보 default kr
+      if (!lang) {
+        lang = 'kr';
+      }
+      if (lang.toUpperCase() !== ser.slice(1, 3)) {
+        message = `Serial number is not supported in ${lang.toUpperCase()}.`;
+        throw new BadRequestException();
+      }
+    } catch (err) {
+      Logger.error(message, err.stack, {
+        ser,
+      });
+      throw new HttpException(
+        {
+          status: err.status, // 401 | 404 | 403 ...
+          error: err.response.message, // Bad Request | Unauthorized | Not Found ...
+          message, // This serial is expired since ...
+        },
+        err.status
+      );
+    }
+  }
   ```
 
 * 서버단에서의 쿠키 관리 구현하기
@@ -153,7 +176,6 @@
         secret: 'UPDATE_SERVER_SECRET',
         resave: false,
         saveUninitialized: false,
-        // store: new FileStore(),
         store: memoryStore,
         cookie: {
           httpOnly: false,
