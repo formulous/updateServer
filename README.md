@@ -16,18 +16,20 @@
 2. utils 디렉토리의 dbb파일, help파일 등등을 지정한 경로에 복사해준다.
 (child_process의 리눅스 커맨드 사용방법 참고)
 3. 조회된 데이터를 복사한 dbb파일에 insert 해준다.
+
 4. dbb 파일을 알맞은 형식으로 압축해준다.
-파일 형식:
-  20221104143446.patternc
-  ├── snort_20221104143446.patternc
-  │   ├── regex_wins.dbb (ips인 경우 snortruleset.dbb)
-  │
-  ├── pattern_20221104143446.patternc
-  │   ├── patternblock.dbb
-  │   ├── webcgi.dbb
-  │
-  ├── help_20221104143450.helpc
-  │
+
+  파일 형식:
+    20221104143446.patternc
+    ├── snort_20221104143446.patternc
+    │   ├── regex_wins.dbb (ips인 경우 snortruleset.dbb)
+    │
+    ├── pattern_20221104143446.patternc
+    │   ├── patternblock.dbb
+    │   ├── webcgi.dbb
+    │
+    ├── help_20221104143450.helpc
+    │
 5. 암호화 여부에 따라 file_hash, signature_hash 값을 client 에게 응답해준다.
 
 --------------------------------------------------------------
